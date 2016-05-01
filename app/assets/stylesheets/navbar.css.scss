@@ -1,0 +1,141 @@
+$pure: rgb(255,255,255);
+
+$main: rgb(26,99,156);
+$main-shade-1: rgb(23,89,140); 
+$main-shade-2: rgb(20,79,124);
+$main-shade-3: rgb(18,69,109);
+$main-shade-4: rgb(15,59,93);
+$main-shade-5: rgb(13,49,78);
+$main-shade-6: rgb(10,39,62);
+$main-shade-7: rgb(7,29,46);
+$main-shade-8: rgb(5,19,31);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+$main-shade-1-alpha-light: rgba(23,89,140, 0.5);
+$main-shade-2-alpha-light: rgba(20,79,124, 0.5);
+$main-shade-3-alpha-light: rgba(18,69,109, 0.5);
+$main-shade-4-alpha-light: rgba(15,59,93, 0.5);
+$main-shade-5-alpha-light: rgba(13,49,78, 0.5);
+$main-shade-6-alpha-light: rgba(10,39,62, 0.5);
+$main-shade-7-alpha-light: rgba(7,29,46, 0.5);
+$main-shade-8-alpha-light: rgba(5,19,31, 0.5);
+$main-tint-1-alpha-light: rgba(48,114,165, 0.5);
+$main-tint-2-alpha-light: rgba(71,130,175, 0.5);
+$main-tint-3-alpha-light: rgba(94,145,185, 0.5);
+$main-tint-4-alpha-light: rgba(117,161,195, 0.5);
+$main-tint-5-alpha-light: rgba(140,177,205, 0.5);
+$main-tint-6-alpha-light: rgba(163,192,215, 0.5);
+$main-tint-7-alpha-light: rgba(186,208,225, 0.5);
+$main-tint-8-alpha-light: rgba(209,223,235, 0.5);
+
+$main-shade-1-alpha-strong: rgba(23,89,140, 0.8);
+$main-shade-2-alpha-strong: rgba(20,79,124, 0.8);
+$main-shade-3-alpha-strong: rgba(18,69,109, 0.8);
+$main-shade-4-alpha-strong: rgba(15,59,93, 0.8);
+$main-shade-5-alpha-strong: rgba(13,49,78, 0.8);
+$main-shade-6-alpha-strong: rgba(10,39,62, 0.8);
+$main-shade-7-alpha-strong: rgba(7,29,46, 0.8);
+$main-shade-8-alpha-strong: rgba(5,19,31, 0.8);
+$main-tint-1-alpha-strong: rgba(48,114,165, 0.8);
+$main-tint-2-alpha-strong: rgba(71,130,175, 0.8);
+$main-tint-3-alpha-strong: rgba(94,145,185, 0.8);
+$main-tint-4-alpha-strong: rgba(117,161,195, 0.8);
+$main-tint-5-alpha-strong: rgba(140,177,205, 0.8);
+$main-tint-6-alpha-strong: rgba(163,192,215, 0.8);
+$main-tint-7-alpha-strong: rgba(186,208,225, 0.8);
+$main-tint-8-alpha-strong: rgba(209,223,235, 0.8);
+
+
+html {
+	.navbar-default:hover {
+	//	background-color: $main-tint-3-alpha-strong;
+	}
+
+  .navbar-default {
+    //background-color: $main-tint-3-alpha-light;
+		background-color: transparent;
+    border-color: transparent;
+    border-radius: 0;
+		padding: 10px;
+
+    .navbar-text {
+      color: #ffffff;
+    }
+
+    .navbar-nav > li > a, .navbar-brand {
+      color: $pure;
+    	margin: 15px;
+    }
+
+    .navbar-nav > li > a:hover, .navbar-nav > li > a:focus,
+    .navbar-brand:hover, .navbar-brand:focus,
+    .navbar-nav > .active > a,.navbar-nav > .active > a:hover,
+    .navbar-nav > .open > a,.navbar-nav > .open > a:hover, .navbar-nav > .open > a:focus {
+    	color: $pure;
+    	background-color: $main-tint-4-alpha-light;
+    	border-radius: 10px;
+    }
+		
+		.navbar-nav > li > .dropdown-menu {
+	    background-color: $main-tint-6-alpha-light;
+	    border-radius: 10px;
+	  }
+		
+		.navbar-nav > li > .dropdown-menu > li > a {
+	    color: $pure;
+	    margin: 0px 5px;
+	  }
+		
+		.navbar-nav > li > .dropdown-menu > li > a:hover,
+  	.navbar-nav > li > .dropdown-menu > li > a:focus {
+    	color: $pure;
+    	background-color: $main-tint-2-alpha-light;
+    	border-radius: 5px;
+ 	  }
+		
+		.navbar-nav > li > .dropdown-menu > li > .divider {
+    	background-color: transparent;
+  	}
+
+    .navbar-toggle {
+      border-color: transparent; 
+    }
+    .navbar-toggle:hover, .navbar-toggle:focus {
+      background-color: #0040ff;
+    }
+
+    .navbar-toggle .icon-bar {
+      background-color: #ffffff;
+    }
+    .navbar-collapse, .navbar-form {
+  	  border-color: #ffffff;
+  	}
+  
+  	.navbar-link {
+      color: #ffffff;
+    }
+    .navbar-link:hover {
+      color: #ff0000;
+    }
+  }
+   
+  @media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+      color: #ffffff;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #ff0000;
+    }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+      color: #ff0000;
+      background-color: #0040ff;
+    }
+  }
+}
