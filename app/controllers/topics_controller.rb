@@ -1,4 +1,10 @@
 class TopicsController < ApplicationController
+	
+	def index
+		# Browse All the Articles
+		@articles = Article.all
+	end
+
 	def create
 		@topic = Topic.create(topic_params)
 

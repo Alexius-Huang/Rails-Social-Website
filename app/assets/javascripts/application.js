@@ -15,3 +15,18 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 500) {
+        $('.navbar').css({
+        	"background-color":"rgba(117,161,195, 0.7)",
+        	"transition":"background-color 1s"
+        });
+    }
+    else {
+        $('.navbar').css({
+        	"background-color":"transparent",
+        	"transition":"background-color 1s"
+        })
+    }
+},false);
