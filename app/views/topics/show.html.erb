@@ -1,0 +1,28 @@
+<div class="gap-small"></div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h3><%= icon 'apple' %> My Articles</h3>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Article Topics' Tags -->
+<%= render 'topics/topic_tags_group' %>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Article Section -->
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<% unless @articles.empty? %>
+			<%= render 'articles/articles' %>
+		<% else %>
+			<div style="text-align: center;"><h4>Currently there are no articles about this topic : (</h4></div>
+		<% end %>
+		<div class="row"><hr class="col-md-12"></div>
+		<div style="text-align: center;"><%= will_paginate @articles %></div>
+		<hr class="col-md-12">
+	</div>
+</div>

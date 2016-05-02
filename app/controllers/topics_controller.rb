@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 	
 	def index
 		# Browse All the Articles
+		@highlight_token = nil
 		@topics = Topic.all
 		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 	end
@@ -13,6 +14,13 @@ class TopicsController < ApplicationController
 			format.html { redirect_to root_path }
 			format.js
 		end
+	end
+
+	def show
+		@topics = Topic.all
+		@topic = Topic.find(params[:id])
+		@highlight_token = @topic.title
+		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 	end
 
 	private
