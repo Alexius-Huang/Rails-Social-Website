@@ -40,13 +40,38 @@ body {
 		margin: 10px;
 
 		.panel-heading {
-			margin-top: 10px;
 			background-color: $main-tint-7;
-			border-bottom: 3px solid $main-tint-4;
 			color: $pure;
 			padding: 10px 15px;
+			border-top-left-radius: 0px;
+			border-top-right-radius: 0px;
+
+			h2 {
+				margin: 7px 10px 0px 10px;
+			}
+		}
+
+		.panel-heading:first-child {
 			border-top-left-radius: 20px;
 			border-top-right-radius: 20px;
+			margin-top: 10px;
+		}
+
+		.topic-tag-heading {
+			border-bottom: 3px solid $main-tint-4;
+			padding-bottom: 25px;
+
+			a {
+				text-decoration: none;
+				background-color: $main-tint-3;
+				color: $pure;
+				padding: 10px;
+				border-radius: 20px;
+			}
+
+			a:hover {
+				background-color: $main-tint-6;
+			}
 		}
 
 		.panel-body {
@@ -60,6 +85,10 @@ body {
 				border-radius: 15px;
 				color: $pure;
 				background-color: #888888;
+			}
+
+			a.topic-btn {
+				padding: 10px;
 			}
 
 			a.remove-btn:hover {
@@ -77,6 +106,6 @@ body {
 			border-bottom-left-radius: 20px;
 			border-bottom-right-radius: 20px;
 		}
-	}
 
+	}
 }

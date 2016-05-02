@@ -1,0 +1,14 @@
+<% @articles.each do |article| %>
+	<div class="col-md-4 article-column">
+		<div class="panel-heading"><h2><%= article.title %></h2></div>
+		<div class="panel-heading topic-tag-heading">
+				<%= link_to icon("tag") + " " + article.topic.title, topic_path(article.topic), :class => "topic-btn" %>
+		</div>
+		<div class="panel-body"><%= truncate(article.content, length: 500) %></div>
+		<div class="panel-body">
+			<%= link_to icon("remove") + "Remove", topic_article_path(article.topic, article), method: :delete, :class => "pull-right remove-btn" %>
+			<%= link_to icon("pencil") + " Edit", edit_topic_article_path(article.topic, article), :class => "pull-right edit-btn" %>
+			<%= link_to icon("eye-open") + " Read More", topic_article_path(article.topic, article), :class => "pull-right read-btn" %>
+		</div>
+	</div>
+<% end %>

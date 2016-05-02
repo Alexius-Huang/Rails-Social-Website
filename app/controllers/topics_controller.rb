@@ -2,7 +2,8 @@ class TopicsController < ApplicationController
 	
 	def index
 		# Browse All the Articles
-		@articles = Article.all
+		@topics = Topic.all
+		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 	end
 
 	def create

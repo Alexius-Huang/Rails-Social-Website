@@ -1,0 +1,16 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h4><%= icon "list" %> Article Categories</h4>
+		<!-- Render Topics -->
+		<span class="tag-like tag-link tag-like-green">
+			<%= link_to icon("eye-open") + " Browse All Articles", topics_path %>
+		</span>
+
+		<%= render @topics %>
+		<div style="display: inline-block;"><div id="topic-append" style="display: none;"></div></div>
+
+		<span class="tag-like tag-like-yellow tag-link">
+			<%= link_to icon("plus") + " Add New Article Category", "#", :id => "new-topic-ajax-link" %>
+		</span>
+	</div>
+</div>
