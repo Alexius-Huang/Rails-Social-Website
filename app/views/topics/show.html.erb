@@ -11,9 +11,23 @@
 <!-- Article Topics' Tags -->
 <%= render 'topics/topic_tags_group' %>
 
-<!-- New Topic AJAX Form -->
-<%= render 'topics/new_topic_ajax_form' %>
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
 
+		<div class="row">
+			<div class="col-md-4">
+				<!-- New Topic AJAX Form -->
+				<%= render 'topics/new_topic_ajax_form' %>
+			</div>
+
+			<div class="col-md-4">
+				<!-- Topic List -->
+				<%= render 'topics/topics_ajax' %>
+			</div>
+		</div>
+
+	</div>
+</div>
 <hr class="col-md-offset-1 col-md-10">
 
 <!-- Article Section -->

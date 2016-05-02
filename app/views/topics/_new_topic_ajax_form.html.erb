@@ -1,14 +1,10 @@
 <div id="new-topic-ajax-section">
-	<div class="row">
-		<div class="col-md-offset-1 col-md-4">
-			<%= simple_form_for @new_topic, remote: true do |f| %>
-				<div class="form-group">
-					<%= f.input :title, placeholder: "New Article Category's Title", input_html: { :class => "topic-form-control" } %>
-				</div>
-				<div class="form-action">
-					<%= f.submit "Submit", data: { disable_with: "Submitting..." }, :class => "submit-btn" %>
-				</div>
-			<% end %>
+	<%= simple_form_for @new_topic, remote: true do |f| %>
+		<div class="form-group">
+			<%= f.input :title, placeholder: "New Article Category's Title", input_html: { :class => "topic-form-control" } %>
 		</div>
-	</div>
+		<div class="form-action">
+			<%= f.submit "Submit", data: { disable_with: "Submitting..." }, :class => "submit-btn" %>
+		</div>
+	<% end %>
 </div>

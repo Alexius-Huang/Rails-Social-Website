@@ -9,30 +9,6 @@ $main-tint-7: rgb(186,208,225);
 $main-tint-8: rgb(209,223,235);
 
 body {
-	#new-topic-ajax-section {
-		display: none;
-
-		form {
-			background-color: #aaaaaa;
-			padding: 15px;
-			margin: 15px;
-			border-radius: 10px;
-			
-			label {
-				color: white;
-			}
-
-			.submit-btn {
-				color: white;
-				background-color: #aaaaaa;
-				border-radius: 15px;
-			}
-
-			.submit-btn:hover {
-				background-color: $main-tint-6;
-			}
-		}
-	}
 
 	/* Article Panel */
 	#latest-article {
