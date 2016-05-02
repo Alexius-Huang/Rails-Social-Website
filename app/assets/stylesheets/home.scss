@@ -1,3 +1,4 @@
+$pure: rgb(255,255,255);
 $main-tint-1: rgb(48,114,165);
 $main-tint-2: rgb(71,130,175);
 $main-tint-3: rgb(94,145,185);
@@ -32,4 +33,50 @@ body {
 			}
 		}
 	}
+
+	/* Article Panel */
+	#latest-article {
+		
+		margin: 10px;
+
+		.panel-heading {
+			margin-top: 10px;
+			background-color: $main-tint-7;
+			border-bottom: 3px solid $main-tint-4;
+			color: $pure;
+			padding: 10px 15px;
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+
+		.panel-body {
+			padding: 10px 15px;
+			background-color: #cccccc;
+
+			a {
+				text-decoration: none;
+				margin: 3px;
+				padding: 6px;
+				border-radius: 15px;
+				color: $pure;
+				background-color: #888888;
+			}
+
+			a.remove-btn:hover {
+				background-color: #aa3333;
+			}
+			a.edit-btn:hover {
+				background-color: #33aa33;
+			}
+			a.read-btn:hover {
+				background-color: $main-tint-5;
+			}
+		}
+
+		.panel-body:last-child {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
+
 }
