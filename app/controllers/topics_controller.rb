@@ -4,6 +4,7 @@ class TopicsController < ApplicationController
 		# Browse All the Articles
 		@highlight_token = nil
 		@topics = Topic.all
+		@new_topic = Topic.new
 		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 	end
 
@@ -19,6 +20,7 @@ class TopicsController < ApplicationController
 	def show
 		@topics = Topic.all
 		@topic = Topic.find(params[:id])
+		@new_topic = Topic.new
 		@highlight_token = @topic.title
 		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 	end

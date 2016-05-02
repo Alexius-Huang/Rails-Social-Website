@@ -12,5 +12,11 @@
 		<span class="tag-like tag-like-yellow tag-link">
 			<%= link_to icon("plus") + " Add New Article Category", "#", :id => "new-topic-ajax-link" %>
 		</span>
+
+		<% unless @highlight_token.nil? %>
+			<span class="tag-like tag-like-yellow tag-link">
+				<%= link_to icon("plus") + " Compose New Article", new_topic_article_path(@topic) %>
+			</span>
+		<% end %>
 	</div>
 </div>
