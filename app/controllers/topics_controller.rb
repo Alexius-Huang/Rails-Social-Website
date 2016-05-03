@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
 	
 	def index
 		# Browse All the Articles
-		@highlight_token = nil
+		@highlight_token = "All Articles"
 		@topics = Topic.all
 		@new_topic = Topic.new
 		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)

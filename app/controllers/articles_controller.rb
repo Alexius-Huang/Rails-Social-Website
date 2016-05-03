@@ -17,6 +17,7 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = @topic.articles.find(params[:id])
+		@highlight_token = @topic.title	
 	end
 
 	def edit
@@ -27,7 +28,7 @@ class ArticlesController < ApplicationController
 		@article = @topic.articles.find(params[:id])
 		
 		if @article.update(article_params)
-			redirect_to @article
+			redirect_to topic_article_path(@topic, @article)
 		else
 			render :edit
 		end

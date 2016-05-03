@@ -53,6 +53,11 @@ body {
 
 		h2 {
 			margin: 7px 10px 0px 10px;
+			
+			a {
+				text-decoration: none;
+				color: $pure;
+			}
 		}
 	}
 
@@ -116,10 +121,21 @@ body {
 	/* Article Presence */
 	.article-presence {
 		@include scrolling(300px);
+		
 		img {
-			max-width: 100%;
+			display: block;
+			max-width: 100% !important;
+			height: auto !important;
 		}
+	}
 
+	.article-full-presence {
+		font-size: 120%;
+		border-radius: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 40px;
+		background-color: #eeeeee;
 	}
 
 }
