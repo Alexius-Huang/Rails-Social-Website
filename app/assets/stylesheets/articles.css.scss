@@ -8,6 +8,12 @@ $main-tint-6: rgb(163,192,215);
 $main-tint-7: rgb(186,208,225);
 $main-tint-8: rgb(209,223,235);
 
+@mixin scrolling($height) {
+	max-width: 100%;
+  height: $height;
+  overflow: scroll;
+}
+
 body {
 	#new-topic-ajax-section {
 		display: none;
@@ -75,7 +81,7 @@ body {
 
 	.panel-body {
 		padding: 10px 15px;
-		background-color: #cccccc;
+		background-color: #eeeeee;
 
 		a {
 			text-decoration: none;
@@ -105,6 +111,15 @@ body {
 		border-bottom-left-radius: 20px;
 		border-bottom-right-radius: 20px;
 		margin-bottom: 18px;
+	}
+
+	/* Article Presence */
+	.article-presence {
+		@include scrolling(300px);
+		img {
+			max-width: 100%;
+		}
+
 	}
 
 }
