@@ -14,11 +14,17 @@
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
 
-		<!-- New Topic AJAX Form -->
-		<%= render 'topics/new_topic_ajax_form' %>
+		<div class="row">
+			<div class="col-md-4">
+				<!-- New Topic AJAX Form -->
+				<%= render 'topics/new_topic_ajax_form' %>
+			</div>
 
-		<!-- Topic List -->
-		<%= render 'topics/topics_ajax' %>
+			<div class="col-md-4">
+				<!-- Topic List -->
+				<%= render 'topics/topics_ajax' %>
+			</div>
+		</div>
 
 	</div>
 </div>
@@ -34,7 +40,7 @@
 				<%= render 'articles/articles' %>
 			<% else %>
 				<div class="col-md-12" style="text-align: center;">
-					<h4>Currently there are no articles = (</h4>
+					<h4>Currently there are no articles : (</h4>
 				</div>
 			<% end %>
 		</div>
