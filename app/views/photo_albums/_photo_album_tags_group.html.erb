@@ -1,0 +1,23 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h4><%= icon "list" %> Photo Albums</h4>
+		<!-- Render Photo Albums -->
+		<span class="tag-like tag-link tag-like-green">
+			<%= link_to icon("eye-open") + " Browse All Photos", photo_albums_path %>
+		</span>
+
+		<%= render @photo_albums %>
+		<div style="display: inline-block;"><div class="photo-album-append" style="display: none"></div></div>
+		
+		<span class="tag-like tag-like-yellow tag-link">
+			<%= link_to icon("plue") + " Add New Photo Album", "#", :id => "new-photo-album-ajax-link" %>
+		</span>
+
+		<!-- Upload New Photo Button <- not yet -->
+
+		<span class="tag-like tag-like-yellow tag-link">
+			<%= link_to icon("wrench") + " Setting", "#" %>
+		</span>
+
+	</div>
+</div>
