@@ -1,0 +1,141 @@
+$pure: rgb(255,255,255);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+@mixin scrolling($height) {
+	max-width: 100%;
+  height: $height;
+  overflow: scroll;
+}
+
+body {
+	#new-topic-ajax-section {
+		display: none;
+
+		form {
+			background-color: #aaaaaa;
+			padding: 15px;
+			margin: 15px;
+			border-radius: 10px;
+			
+			label {
+				color: white;
+			}
+
+			.submit-btn {
+				color: white;
+				background-color: #aaaaaa;
+				border-radius: 15px;
+			}
+
+			.submit-btn:hover {
+				background-color: $main-tint-6;
+			}
+		}
+	}
+
+	/* Article Panel */
+		
+	margin: 10px;
+
+	.panel-heading {
+		background-color: $main-tint-7;
+		color: $pure;
+		padding: 10px 15px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+
+		h2 {
+			margin: 7px 10px 0px 10px;
+			
+			a {
+				text-decoration: none;
+				color: $pure;
+			}
+		}
+	}
+
+	.panel-heading:first-child {
+		border-top-left-radius: 20px;
+		border-top-right-radius: 20px;
+		margin-top: 10px;
+	}
+
+	.topic-tag-heading {
+		border-bottom: 3px solid $main-tint-4;
+		padding-bottom: 25px;
+
+		a {
+			text-decoration: none;
+			background-color: $main-tint-3;
+			color: $pure;
+			padding: 10px;
+			border-radius: 20px;
+		}
+
+		a:hover {
+			background-color: $main-tint-6;
+		}
+	}
+
+	.panel-body {
+		padding: 10px 15px;
+		background-color: #eeeeee;
+
+		a {
+			text-decoration: none;
+			margin: 3px;
+			padding: 6px;
+			border-radius: 15px;
+			color: $pure;
+			background-color: #888888;
+		}
+
+		a.topic-btn {
+			padding: 10px;
+		}
+
+		a.remove-btn:hover {
+			background-color: #aa3333;
+		}
+		a.edit-btn:hover {
+			background-color: #33aa33;
+		}
+		a.read-btn:hover {
+			background-color: $main-tint-5;
+		}
+	}
+
+	.panel-body:last-child {
+		border-bottom-left-radius: 20px;
+		border-bottom-right-radius: 20px;
+		margin-bottom: 18px;
+	}
+
+	/* Article Presence */
+	.article-presence {
+		@include scrolling(300px);
+		
+		img {
+			display: block;
+			max-width: 100% !important;
+			height: auto !important;
+		}
+	}
+
+	.article-full-presence {
+		font-size: 120%;
+		border-radius: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 40px;
+		background-color: #eeeeee;
+	}
+
+}

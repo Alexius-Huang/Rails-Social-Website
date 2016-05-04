@@ -1,0 +1,68 @@
+$pure: rgb(255,255,255);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+@mixin scrolling($height) {
+	max-width: 100%;
+  height: $height;
+  overflow: scroll;
+}
+
+body {
+	#new-topic-ajax-section {
+		display: none;
+		margin: 30px 0px 20px 0px;
+
+		form {
+			background-color: #aaaaaa;
+			padding: 15px;
+			margin: 15px;
+			border-radius: 10px;
+			
+			label {
+				color: white;
+			}
+
+			.submit-btn {
+				color: white;
+				background-color: #aaaaaa;
+				border-radius: 15px;
+			}
+
+			.submit-btn:hover {
+				background-color: $main-tint-6;
+			}
+		}
+	}
+
+	#topics-ajax-section {
+		display: none;
+		color: $pure;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		
+		.panel-heading {
+			background-color: $main-tint-5;
+			border-top-left-radius: 10px;
+			border-top-right-radius: 10px;
+		}
+
+		.panel-scroll {
+			@include scrolling(150px);
+		}
+
+		.panel-body {
+			background-color: #aaaaaa;	
+		}
+
+		.panel-body:hover {
+			background-color: $main-tint-7;
+		}
+	}
+}

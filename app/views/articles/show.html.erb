@@ -1,0 +1,50 @@
+<div class="gap-small"></div>
+
+<div class="row">
+	<div class="col-md-offset-2 col-md-2">
+		<h3><%= icon "apple" %> My Article</h3>
+	</div>
+		<!-- Manipulation -->
+	<div class="col-md-6">
+		<span class="tag-like tag-like-red tag-link pull-right">
+			<%= link_to icon("remove") + " Delete", topic_article_path(@topic, @article), method: :delete, data: { confirm: "Are you sure to delete this article?" } %>
+		</span>
+		<span class="tag-like tag-link tag-like-yellow pull-right">
+			<%= link_to icon("pencil") + " Edit", edit_topic_article_path(@topic, @article) %>
+		</span>
+		<span class="tag-like tag-link pull-right">
+			<%= link_to icon("chevron-left") + " Back", :back %>
+		</span>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Article Title -->
+<div class="row">
+	<div class="col-md-offset-2 col-md-8" style="text-align: center;">
+		<h2><%= @article.title %></h2>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Article Presence -->
+<div class="row">
+	<div class="col-md-offset-2 col-md-8 article-full-presence">
+		<%= @article.content.html_safe %>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Recommended Articles -->
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<h3><%= icon "list" %> Recommended Articles in the Same Category</h3>
+		<h4>Website Building</h4>
+	</div>
+</div>
+
+
+<div class="gap-large"></div>

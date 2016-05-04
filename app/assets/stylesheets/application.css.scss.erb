@@ -1,0 +1,210 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+$main: rgb(26,99,156);
+$main-shade-1: rgb(23,89,140); 
+$main-shade-2: rgb(20,79,124);
+$main-shade-3: rgb(18,69,109);
+$main-shade-4: rgb(15,59,93);
+$main-shade-5: rgb(13,49,78);
+$main-shade-6: rgb(10,39,62);
+$main-shade-7: rgb(7,29,46);
+$main-shade-8: rgb(5,19,31);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+$main-shade-1-alpha-light: rgba(23,89,140, 0.5);
+$main-shade-2-alpha-light: rgba(20,79,124, 0.5);
+$main-shade-3-alpha-light: rgba(18,69,109, 0.5);
+$main-shade-4-alpha-light: rgba(15,59,93, 0.5);
+$main-shade-5-alpha-light: rgba(13,49,78, 0.5);
+$main-shade-6-alpha-light: rgba(10,39,62, 0.5);
+$main-shade-7-alpha-light: rgba(7,29,46, 0.5);
+$main-shade-8-alpha-light: rgba(5,19,31, 0.5);
+$main-tint-1-alpha-light: rgba(48,114,165, 0.5);
+$main-tint-2-alpha-light: rgba(71,130,175, 0.5);
+$main-tint-3-alpha-light: rgba(94,145,185, 0.5);
+$main-tint-4-alpha-light: rgba(117,161,195, 0.5);
+$main-tint-5-alpha-light: rgba(140,177,205, 0.5);
+$main-tint-6-alpha-light: rgba(163,192,215, 0.5);
+$main-tint-7-alpha-light: rgba(186,208,225, 0.5);
+$main-tint-8-alpha-light: rgba(209,223,235, 0.5);
+
+$main-shade-1-alpha-strong: rgba(23,89,140, 0.8);
+$main-shade-2-alpha-strong: rgba(20,79,124, 0.8);
+$main-shade-3-alpha-strong: rgba(18,69,109, 0.8);
+$main-shade-4-alpha-strong: rgba(15,59,93, 0.8);
+$main-shade-5-alpha-strong: rgba(13,49,78, 0.8);
+$main-shade-6-alpha-strong: rgba(10,39,62, 0.8);
+$main-shade-7-alpha-strong: rgba(7,29,46, 0.8);
+$main-shade-8-alpha-strong: rgba(5,19,31, 0.8);
+$main-tint-1-alpha-strong: rgba(48,114,165, 0.8);
+$main-tint-2-alpha-strong: rgba(71,130,175, 0.8);
+$main-tint-3-alpha-strong: rgba(94,145,185, 0.8);
+$main-tint-4-alpha-strong: rgba(117,161,195, 0.8);
+$main-tint-5-alpha-strong: rgba(140,177,205, 0.8);
+$main-tint-6-alpha-strong: rgba(163,192,215, 0.8);
+$main-tint-7-alpha-strong: rgba(186,208,225, 0.8);
+$main-tint-8-alpha-strong: rgba(209,223,235, 0.8);
+
+$pure: rgb(255,255,255);
+
+@mixin jumbotron-resize($top, $bottom) {
+	padding-top: $top;
+	padding-bottom: $bottom;
+}
+
+html {
+
+	.gap-small { margin-top: 20px; }
+	.gap-medium { margin-top: 40px; }
+	.gap-large { margin-top: 70px}
+
+	.jumbotron {
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		-webkit-background-size: cover;
+	  -moz-background-size: cover;
+	  -o-background-size: cover;
+	  background-size: cover;
+	  background-position: 20% 50%;
+
+		color: $pure;
+		h2 {
+			text-align: center;
+		}
+		p {
+			font-size: 100%;
+			color: $pure;
+		}
+	}
+
+	.profile-jumbotron {
+		background-image: url(<%= asset_path 'default_bg_1.jpg' %>);
+		@include jumbotron-resize(5%, 30%);
+	}
+	
+	.contact-jumbotron {
+		background-image: url(<%= asset_path 'contact_default.jpg' %>);
+		@include jumbotron-resize(5%, 30%);
+	}
+
+	.sign-in-jumbotron {
+		background-image: url(<%= asset_path 'sign_in.jpg' %>);
+		@include jumbotron-resize(5%, 30%);
+	}
+	
+	.sign-up-jumbotron {
+		background-image: url(<%= asset_path 'sign_up.jpg' %>);
+		@include jumbotron-resize(5%, 30%);
+	}
+	
+	.welcome-jumbotron {
+		padding-top: 0;
+		background-image: url(<%= asset_path 'user_default.png' %>);
+		@include jumbotron-resize(0%, 50%);
+	}
+}
+
+body {
+	
+	font-family: 'Ubuntu', sans-serif;	
+
+	/* Form */
+		
+	div.div-form {
+		color: $pure;
+		background-color: $main-tint-4-alpha-light;
+		padding: 10px 40px 20px 40px;
+		border-radius: 10px;
+		border: 1px solid $main-tint-4-alpha-light;
+
+		h2 {
+			text-align: center;
+		}
+
+		a {
+			font-family: 'Ubuntu', sans-serif;		
+			color: $pure;
+			padding: 10px;
+		}
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		input.btn-default {
+			color: $pure;
+			background-color: $main;
+			width: 100%;
+		}
+	}
+
+	div.div-form:hover {
+		background-color: $main-tint-3-alpha-strong;
+	}
+
+	/* Form */ 
+
+	/* Tags */
+
+	.tags {
+		padding: 15px;
+	}
+
+	.tag-like {
+		background-color: #aaaaaa;
+		color: $pure;
+		padding: 10px 20px;
+		margin: 5px;
+		line-height: 20px;
+		border-radius: 20px;
+		box-shadow: 2px 2px 3px #888888;
+		display: inline-block;
+	}
+
+	.tag-link a {
+		color: $pure;
+		text-decoration: none;
+	}
+
+	.tag-link:hover {
+		background-color: $main-tint-6;
+	}
+
+	span.highlight { background-color: $main-tint-6; }
+	span.highlight-green { background-color: #33aa33; }
+
+	.tag-like-green:hover { background-color: #33aa33; }
+	.tag-like-red:hover { background-color: red; }
+	.tag-like-yellow:hover { background-color: #dddd99; }
+
+	/* Tags */
+
+
+}
+
