@@ -2,7 +2,7 @@
 	<div class="col-md-offset-1 col-md-10">
 		<h4><%= icon "list" %> Photo Albums</h4>
 		<!-- Render Photo Albums -->
-		<span class="tag-like tag-link tag-like-green">
+		<span class="tag-like tag-link tag-like-green <%= "highlight-green" if @photo_highlight_token == "All Photos" %>">
 			<%= link_to icon("eye-open") + " Browse All Photos", photo_albums_path %>
 		</span>
 

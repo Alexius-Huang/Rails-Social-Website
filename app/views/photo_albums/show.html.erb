@@ -1,2 +1,17 @@
-<h1>PhotoAlbums#show</h1>
-<p>Find me in app/views/photo_albums/show.html.erb</p>
+<div class="gap-small"></div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h3><%= icon "book" %> My Photos</h3>
+	</div>
+</div>
+
+<hr class="col-md-offset-2 col-md-10">
+
+<!-- Photo Album Titles' Tags -->
+<%= render 'photo_albums/photo_album_tags_group' %>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Photo pinterest Section -->
+<%= render 'photos/photo_album_photos_section' %>

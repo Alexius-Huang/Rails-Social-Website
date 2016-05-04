@@ -10,6 +10,7 @@ class PhotoAlbumsController < ApplicationController
   	@photo_album = PhotoAlbum.find(params[:id])
   	@new_photo_album = PhotoAlbum.new
   	@photos = @photo_album.photos.all
+  	@photo_highlight_token = @photo_album.title
   end
 
   def destroy
