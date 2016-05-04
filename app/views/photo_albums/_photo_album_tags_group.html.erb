@@ -13,7 +13,11 @@
 			<%= link_to icon("plue") + " Add New Photo Album", "#", :id => "new-photo-album-ajax-link" %>
 		</span>
 
-		<!-- Upload New Photo Button <- not yet -->
+		<% unless @photo_highlight_token == "All Photos" || @photo_highlight_token.nil? %>
+			<span class="tag-like tag-like-yellow tag-link">
+				<%= link_to icon("open-file") + " Upload New Photo", "#", :id => "new-photo-link" %>
+			</span>
+		<% end %>
 
 		<span class="tag-like tag-like-yellow tag-link">
 			<%= link_to icon("wrench") + " Setting", "#" %>
