@@ -37,11 +37,25 @@ body {
       -webkit-column-break-inside: avoid;
       -moz-column-break-inside: avoid;
       column-break-inside: avoid;
-      padding: 20px 5px;
-      border-radius: 10px;
+			
+			.panel-img {
+		    padding: 20px 5px;
+    	  border-top-left-radius: 10px;
+    	  border-top-right-radius: 10px;
+			}
+
+			.panel-photo-content {
+				padding: 10px 20px;
+				border-radius: 0px;
+			}
+
+			.panel-photo-operation {
+    	  border-bottom-left-radius: 10px;
+    	  border-bottom-right-radius: 10px;				
+			}
 
       p {
-      	margin: 5px 5px 0px 5px;
+      	margin: 5px 10px;
       }
 
       img {
@@ -77,9 +91,18 @@ body {
 		}
 
 		.item:hover {
-			transition: background-color 0.5s;
-			-webkit-transition: background-color 0.5s;
-			background-color: $main-tint-7;
+
+			.panel-body {
+				transition: background-color 0.5s;
+				-webkit-transition: background-color 0.5s;
+				background-color: $main-tint-7;
+			}
+
+			p, h4 {
+				transition: color 0.5s;
+				-webkit-transition: color 0.5s;
+				color: $pure;
+			}
 		}
 
 }
