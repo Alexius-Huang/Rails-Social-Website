@@ -1,0 +1,85 @@
+$pure: rgb(255,255,255);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+body {
+
+		/* Pinterest Like CSS */
+
+		#wrapper {
+			margin-bottom: 40px;
+			margin-top: 40px;
+		}
+		
+		#list	{
+	    width: 100%;
+	    overflow: hidden;
+	    margin-bottom: -1.875em; /* 30px */
+	    -webkit-column-count: 3;
+	    -webkit-column-gap: 1.875em; /* 30px */
+	    -webkit-column-fill: auto;
+	    -moz-column-count: 3;
+	    -moz-column-gap: 1.875em; /* 30px */
+	    -moz-column-fill: auto;
+	    column-count: 3;
+	    column-gap: 1.875em; /* 30px */
+	    column-fill: auto;
+		}
+
+    .item {
+      margin-bottom: 1.875em; /* 15px 30px */
+      -webkit-column-break-inside: avoid;
+      -moz-column-break-inside: avoid;
+      column-break-inside: avoid;
+      padding: 20px 5px;
+      border-radius: 10px;
+
+      p {
+      	margin: 5px 5px 0px 5px;
+      }
+
+      img {
+      	display: block;
+      	margin: 0 auto;
+      	max-width: 90%;
+      	border-radius: 10px;
+      }
+    }
+		 
+		@media only screen and ( max-width: 40em ) /* 640px */
+		{
+	    #list {
+        -webkit-column-count: 2;
+        -webkit-column-gap: 0.938em; /* 15px */
+        -moz-column-count: 2;
+        -moz-column-gap: 0.938em; /* 15px */
+        column-count: 2;
+        column-gap: 0.938em; /* 15px */
+	    }
+      .item {
+        margin-bottom: 0.938em; /* 15px */
+      }
+		}
+		
+		@media only screen and ( max-width: 20em ) /* 320px */ 
+		{
+	    #list {
+        -webkit-column-count: auto;
+        -moz-column-count: auto;
+        column-count: auto;
+	    }
+		}
+
+		.item:hover {
+			transition: background-color 0.5s;
+			-webkit-transition: background-color 0.5s;
+			background-color: $main-tint-7;
+		}
+
+}

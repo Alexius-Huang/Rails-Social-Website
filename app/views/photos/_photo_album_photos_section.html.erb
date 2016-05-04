@@ -1,0 +1,19 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h4><%= icon "picture" %> Browse All Photos </h4>
+		<% unless @photos.empty? %>
+			<div id="photos">
+				<div id="wrapper">
+					<div id="list"><%= render @photos %></div>
+				</div>
+			</div>
+		<% else %>
+			<div style="text-align: center;"><h4>Currently there are no photos : (</h4></div>
+		<% end %>
+		<div class="row"><hr class="col-md-12"></div>
+		<% if @photos.count >= 10 %>
+			<div style="text-align: center;"><%= will_paginate @photos %></div>
+			<hr class="col-md-12">
+		<% end %>
+	</div>
+</div>
