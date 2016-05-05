@@ -1,0 +1,53 @@
+<div class="gap-small"></div>
+
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<h3><%= icon "camera" %> My Photos</h3>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Photo Albums Tags -->
+<%= render 'photo_albums/photo_album_tags_group' %>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<!-- Photo Present Section -->
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="row">
+			<div class="col-md-4" id="photo-list">
+				<!-- Photo List -->
+				<h4><%= icon "list" %> Photo List</h4>
+				<br>
+				<% unless @photos.empty? %>
+					<%= render 'photos/photo_list' %>
+				<% end %>
+			</div>
+
+			<!-- Latest Photo -->
+			<div class="col-md-8" id="lastest-photo">
+				<h4><%= icon "picture" %> Latest Photos</h4>
+				<br>
+				<% unless @photos.empty? %>
+					<%= render @photo_sample %>
+
+					<div class="row">
+						<div class="col-md-12" style="text-align: center;">
+							<span class="tag-like tag-like-green tag-link"><%= link_to icon("eye-open") + " Browse My Photos", photo_albums_path %></span> 
+						</div>
+					</div>
+				<% else %>
+					<div class="col-md-12" style="text-align: center;">
+						<h4>Currently there are no photos : (</h4>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+
+<hr class="col-md-offset-1 col-md-10">
+
+<div class="gap-large"></div>

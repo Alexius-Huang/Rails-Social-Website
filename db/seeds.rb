@@ -17,3 +17,11 @@ generate_articles = (1..10).each do |i|
 end
 
 puts "Complete!"
+
+print "Should generate photo albums..."
+
+generate_photo_albums = ["Traveling", "Participated Events", "Workshop"].each { |title| PhotoAlbum.create(title: title) }
+
+puts "Complete!"
+
+puts "Enjoy Testing!"

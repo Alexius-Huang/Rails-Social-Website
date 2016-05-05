@@ -1,0 +1,20 @@
+<div class="item">
+	<div class="panel-body panel-img">
+		<%= link_to image_tag(photo.image.url), "#", :data => { toggle: "modal", target: "#view-photo-modal-#{photo.id}" } %>
+	</div>
+	<div class="panel-body panel-photo-content">
+		<div style="text-align: center;"><h4><%= icon "menu-left" %> <%= photo.title %> <%= icon "menu-right" %></h4></div>
+		<p><%= icon "time" %> Posted <%= time_ago_in_words(photo.created_at) %> ago</p>
+	</div>
+	<div class="panel-body panel-photo-operation">
+		<%= link_to icon("remove") + "Remove", photo_album_photo_path(photo.photo_album, photo), method: :delete, data: { confirm: "Are you sure to delete this photo?" }, :class => "pull-right remove-btn" %>
+		<%= link_to icon("pencil") + " Edit", "#", :class => "pull-right edit-btn", :data => { toggle: "modal", target: "#edit-photo-modal-#{photo.id}" } %>
+		<%= link_to icon("eye-open") + " View", "#", :class => "pull-right read-btn", :data => { toggle: "modal", target: "#view-photo-modal-#{photo.id}" } %>
+	</div>
+</div>
+
+<!-- Edit Photo Modal -->
+<%= render 'photos/edit_photo_modal', photo: photo, photo_album: photo.photo_album %>
+
+<!-- View Photo Modal -->
+<%= render 'photos/view_photo_modal', photo: photo %>

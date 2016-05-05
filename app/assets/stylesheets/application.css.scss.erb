@@ -73,61 +73,12 @@ $main-tint-8-alpha-strong: rgba(209,223,235, 0.8);
 
 $pure: rgb(255,255,255);
 
-@mixin jumbotron-resize($top, $bottom) {
-	padding-top: $top;
-	padding-bottom: $bottom;
-}
-
 html {
 
 	.gap-small { margin-top: 20px; }
 	.gap-medium { margin-top: 40px; }
 	.gap-large { margin-top: 70px}
 
-	.jumbotron {
-		background-repeat: no-repeat;
-		background-attachment: fixed;
-		-webkit-background-size: cover;
-	  -moz-background-size: cover;
-	  -o-background-size: cover;
-	  background-size: cover;
-	  background-position: 20% 50%;
-
-		color: $pure;
-		h2 {
-			text-align: center;
-		}
-		p {
-			font-size: 100%;
-			color: $pure;
-		}
-	}
-
-	.profile-jumbotron {
-		background-image: url(<%= asset_path 'default_bg_1.jpg' %>);
-		@include jumbotron-resize(5%, 30%);
-	}
-	
-	.contact-jumbotron {
-		background-image: url(<%= asset_path 'contact_default.jpg' %>);
-		@include jumbotron-resize(5%, 30%);
-	}
-
-	.sign-in-jumbotron {
-		background-image: url(<%= asset_path 'sign_in.jpg' %>);
-		@include jumbotron-resize(5%, 30%);
-	}
-	
-	.sign-up-jumbotron {
-		background-image: url(<%= asset_path 'sign_up.jpg' %>);
-		@include jumbotron-resize(5%, 30%);
-	}
-	
-	.welcome-jumbotron {
-		padding-top: 0;
-		background-image: url(<%= asset_path 'user_default.png' %>);
-		@include jumbotron-resize(0%, 50%);
-	}
 }
 
 body {
@@ -202,6 +153,12 @@ body {
 	.tag-like-green:hover { background-color: #33aa33; }
 	.tag-like-red:hover { background-color: red; }
 	.tag-like-yellow:hover { background-color: #dddd99; }
+
+	.hide-button-property button {
+		background-color: transparent;
+		border: none;
+		padding: 0;
+	}
 
 	/* Tags */
 

@@ -7,4 +7,8 @@ Rails.application.routes.draw do
     resources :articles
   end
 
+  resources :photo_albums do
+    resources :photos
+  end
+
 end

@@ -119,15 +119,20 @@ body {
 	}
 
 	/* Article Presence */
-	.article-presence {
-		@include scrolling(300px);
-		
+	.article-presence, .photo-presence {		
 		img {
 			display: block;
 			max-width: 100% !important;
 			height: auto !important;
+			border-radius: 10px;
 		}
 	}
+
+	.article-presence { @include scrolling(500px); }
+	.photo-presence { 
+		@include scrolling(400px);
+		img { margin: 0 auto; }
+  }
 
 	.article-full-presence {
 		font-size: 120%;
