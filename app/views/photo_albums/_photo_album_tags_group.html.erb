@@ -6,9 +6,8 @@
 			<%= link_to icon("eye-open") + " Browse All Photos", photo_albums_path %>
 		</span>
 
-		<%= render @photo_albums %>
-		<div style="display: inline-block;"><div id="photo-album-append" style="display: none"></div></div>
-		
+		<%= render @photo_albums %><div style="display: inline-block;"><div id="photo-album-append" ></div></div>
+
 		<!-- New Photo Album Modal Link -->
 		<span class="tag-like tag-like-yellow tag-link hide-button-property">
 			<button type="button" data-toggle="modal" data-target="#new-photo-album-modal"> <%= icon "plus" %>	Add New Photo Album</button>

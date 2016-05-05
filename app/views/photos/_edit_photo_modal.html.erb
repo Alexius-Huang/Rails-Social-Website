@@ -1,13 +1,13 @@
-<div class="modal fade" id="new-photo-modal" tabindex="-1" role="dialog" aria-labelledby="new-photo-form">
+<div class="modal fade" id="edit-photo-modal-<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="edit-photo-form">
   <div class="modal-dialog" role="document">
   	<div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="new-photo-form-title">Upload New Photo</h4>
+        <h4 class="modal-title" id="edit-photo-form-title">Edit Photo Information</h4>
       </div>
       <div class="modal-body row">
         <div class="col-md-offset-1 col-md-10">
-          <%= render 'photos/photo_form', photo: @new_photo, photo_album: @photo_album %>
+          <%= render 'photos/photo_form', photo: photo, photo_album: photo_album %>
         </div>
       </div>
       <div class="modal-footer">

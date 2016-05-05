@@ -23,9 +23,10 @@ class PhotosController < ApplicationController
     @photo = @photo_album.photos.find(params[:id])
 
     if @photo.update(photo_params)
-      redirect_to photo_album_path(@photo_album)
-    else
-      render :edit
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
   end
 
