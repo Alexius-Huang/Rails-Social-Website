@@ -13,3 +13,10 @@ $main-tint-8: rgb(209,223,235);
   height: $height;
   overflow: scroll;
 }
+
+body {
+	.panel-img a {
+		background-color: transparent;
+		padding: 0;
+	}
+}

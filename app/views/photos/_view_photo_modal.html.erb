@@ -1,0 +1,31 @@
+<div class="modal fade" id="view-photo-modal-<%= photo.id %>" tabindex="-1" role="dialog" aria-labelledby="view-photo-form">
+  <div class="modal-dialog modal-lg" role="document">
+  	<div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="view-photo-form-title"><%= icon "picture" %> <%= photo.title %></h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <%= image_tag photo.image.url %>
+          </div>
+        </div>
+
+        <div class="row"><hr class="col-md-offset-1 col-md-10"></div>
+        
+        <div class="row">
+          <div class="col-md-offset-1 col-md-10">
+            <h5><%= icon "time" %> Posted <%= time_ago_in_words(photo.created_at) %> ago</h5>
+            <%= photo.content %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
