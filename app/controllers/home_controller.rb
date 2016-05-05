@@ -8,6 +8,7 @@ class HomeController < ApplicationController
   	@photo_highlight_token = nil
   	@photo_albums = PhotoAlbum.all
   	@new_photo_album = PhotoAlbum.new
-  	@photos = Photo.order("created_at DESC").take(3)
+  	@photos = Photo.order("created_at DESC")
+    @photo_sample = @photos.take(3)
   end
 end

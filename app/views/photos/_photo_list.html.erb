@@ -1,0 +1,7 @@
+<div class="panel" id="photo-list">
+	<% @photos.each do |photo| %>
+		<div class="tag-like tag-link">
+			<span><%= link_to icon("picture") + " " + photo.title, "#", data: { toggle: "modal", target: "#view-photo-modal-#{photo.id}" } %></span>
+		</div>
+	<% end %>
+</div>
