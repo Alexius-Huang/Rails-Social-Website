@@ -1,10 +1,6 @@
 class PhotosController < ApplicationController
   before_action :find_photo_album
 
-  def new
-    @photo = @photo_album.photos.new
-  end
-
   def create
     @photo = @photo_album.photos.create(photo_params)
 

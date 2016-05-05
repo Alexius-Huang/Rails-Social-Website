@@ -4,7 +4,8 @@
 		<% unless @photos.empty? %>
 			<div id="photos">
 				<div id="wrapper">
-					<div id="list"><%= render @photos %></div>
+					<div id="list"><div style="display:none"><div id="photo-append"></div>
+					</div> <%= render @photos %></div>
 				</div>
 			</div>
 		<% else %>
