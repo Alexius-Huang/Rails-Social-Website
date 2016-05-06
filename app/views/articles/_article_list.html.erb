@@ -1,0 +1,7 @@
+<div class="panel" id="article-list">
+	<% @articles.each do |article| %>
+		<div class="tag-like tag-link">
+			<span><%= link_to icon("tag") + " " + article.title, "#" %></span>
+		</div>
+	<% end %>
+</div>

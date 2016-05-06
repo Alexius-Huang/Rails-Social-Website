@@ -162,6 +162,43 @@ body {
 
 	/* Tags */
 
+	/* List */
+
+	ul.side-nav {
+		margin-top: 10px;
+
+		li {
+			width: 90%;
+			padding: 10px;
+			background-color: #eeeeee;
+			list-style-type: none;
+			text-align: center;
+
+			a {
+				color: #555555;
+				text-decoration: none;
+			}
+		}
+
+		li:hover {
+			transition: background-color 0.5s;
+			background-color: $main-tint-7;
+			a {
+				color: $pure;
+				transition: color 0.5s;
+			}
+		}
+
+		li:first-child {
+			border-top-left-radius: 20px;
+			border-top-right-radius: 20px;
+		}
+
+		li:last-child {
+			border-bottom-left-radius: 20px;
+			border-bottom-right-radius: 20px;
+		}
+	}
 
 }
 

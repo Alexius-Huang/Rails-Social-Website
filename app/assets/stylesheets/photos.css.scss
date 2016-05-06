@@ -15,8 +15,35 @@ $main-tint-8: rgb(209,223,235);
 }
 
 body {
+	.panel-img {
+		.photo-album-tag {
+			color: $pure;
+			background-color: $main-tint-4;
+			padding: 8px;
+			margin-left: 15px;
+		}
+
+		.photo-album-tag:hover {
+			color: $main-tint-4;
+			background-color: $pure;
+			transition: color 0.5s, background-color 0.5s;
+		}
+	}
+
 	.panel-img a {
 		background-color: transparent;
 		padding: 0;
+	}
+
+	.photo-presence {		
+		@include scrolling(400px);
+		
+		img {
+			display: block;
+			max-width: 100% !important;
+			height: auto !important;
+			border-radius: 10px;
+			margin: 0 auto;
+		}
 	}
 }

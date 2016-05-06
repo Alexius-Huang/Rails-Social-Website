@@ -2,14 +2,13 @@
 
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
-		<h3><%= icon 'apple' %> My Articles</h3>
+		<h3 class="inline-display"><%= icon 'apple' %> My Articles</h3>
+
+		<!-- Article Function Links -->
+		<%= render 'topics/article_function_links' %>
+		
 	</div>
 </div>
-
-<hr class="col-md-offset-1 col-md-10">
-
-<!-- Article Topics' Tags -->
-<%= render 'topics/topic_tags_group' %>
 
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
@@ -32,4 +31,4 @@
 <hr class="col-md-offset-1 col-md-10">
 
 <!-- Article Section -->
-<%= render 'articles/topic_articles_section' %>
+<%= render 'articles/articles_section' %>

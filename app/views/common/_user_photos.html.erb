@@ -2,14 +2,12 @@
 
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
-		<h3><%= icon "camera" %> My Photos</h3>
+		<h3 class="inline-display"><%= icon "camera" %> My Photos</h3>
+
+		<%= render 'photo_albums/photo_function_links' %>
+
 	</div>
 </div>
-
-<hr class="col-md-offset-1 col-md-10">
-
-<!-- Photo Albums Tags -->
-<%= render 'photo_albums/photo_album_tags_group' %>
 
 <hr class="col-md-offset-1 col-md-10">
 
@@ -17,7 +15,7 @@
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
 		<div class="row">
-			<div class="col-md-4" id="photo-list">
+			<div class="col-md-3" id="photo-list">
 				<!-- Photo List -->
 				<h4><%= icon "list" %> Photo List</h4>
 				<br>
@@ -27,7 +25,7 @@
 			</div>
 
 			<!-- Latest Photo -->
-			<div class="col-md-8" id="lastest-photo">
+			<div class="col-md-9" id="lastest-photo">
 				<h4><%= icon "picture" %> Latest Photos</h4>
 				<br>
 				<% unless @photos.empty? %>
