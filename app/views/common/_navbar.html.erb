@@ -39,18 +39,30 @@
       <!-- Search Engine -->
 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to icon("list") + " Articles", topics_path %></li>
-        <li><%= link_to icon("camera") + " Photos", photo_albums_path %></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi! User! <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-              <li><%= link_to icon("cog") + " Account Setting", "#" %></li>
-              <li><%= link_to icon("tasks") + " Article Management", "#" %></li>
-              <li><%= link_to icon("picture") + " Photo Management", "#" %></li>
-              <li class="divider"></li>
-              <li><%= link_to icon("log-out") + " Sign Out", "#" %></li>
-          </ul>
-        </li>
+
+        <% if user_signed_in? %>
+          
+          <li><%= link_to icon("list") + " Articles", user_topics_path(current_user) %></li>
+          <li><%= link_to icon("camera") + " Photos", user_photo_albums_path(current_user) %></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Hi! User! <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+                <li><%= link_to icon("cog") + " Account Setting", edit_user_registration_path %></li>
+                <li><%= link_to icon("tasks") + " Article Management", "#" %></li>
+                <li><%= link_to icon("picture") + " Photo Management", "#" %></li>
+                <li class="divider"></li>
+                <li><%= link_to icon("log-out") + " Sign Out", destroy_user_session_path, method: :delete %></li>
+            </ul>
+          </li>
+
+        <% else %>
+        
+          <li><%= link_to icon("sign-in") + " Sign In!", new_user_session_path %></li>
+          <li><%= link_to icon("sign-up") + " Sign Up!", new_user_registration_path %></li>
+
+        <% end %>
+
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

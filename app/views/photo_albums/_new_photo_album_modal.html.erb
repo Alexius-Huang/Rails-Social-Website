@@ -7,7 +7,7 @@
       </div>
       <div class="modal-body row">
         <div class="col-md-offset-1 col-md-10">
-        	<%= simple_form_for @new_photo_album, remote: true do |f| %>
+        	<%= simple_form_for [@user, @new_photo_album], remote: true do |f| %>
 						<div class="form-group">
 							<%= f.input :title, placeholder: "Photo Album Title", input_html: { :class => "photo-album-form-control" } %>
 						</div>

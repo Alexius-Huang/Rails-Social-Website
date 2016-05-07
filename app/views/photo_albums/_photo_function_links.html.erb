@@ -1,5 +1,5 @@
 <span class="tag-like tag-link tag-like-green pull-right <%= "highlight-green" if @photo_highlight_token == "All Photos" %>">
-	<%= link_to icon("eye-open") + " Browse All Photos", photo_albums_path %>
+	<%= link_to icon("eye-open") + " Browse All Photos", user_photo_albums_path(@user) %>
 </span>
 
 <% unless @photo_highlight_token == "All Photos" || @photo_highlight_token.nil? %>
