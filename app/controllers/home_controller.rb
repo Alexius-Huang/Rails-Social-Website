@@ -3,7 +3,10 @@ class HomeController < ApplicationController
   	@highlight_token = nil
   	@topics = Topic.all
   	@new_topic = Topic.new
-  	@articles = Article.order("created_at DESC").take(3)
+  	@articles = Article.order("created_at DESC")
+    @article_sample = @articles.take(3)
+    @truncate = true
+    @pinterest = false
 
   	@photo_highlight_token = nil
   	@photo_albums = PhotoAlbum.all

@@ -17,7 +17,9 @@ class ArticlesController < ApplicationController
 
 	def show
 		@article = @topic.articles.find(params[:id])
-		@highlight_token = @topic.title	
+		@highlight_token = @topic.title
+		@truncate = false
+		@pinterest = true
 	end
 
 	def edit

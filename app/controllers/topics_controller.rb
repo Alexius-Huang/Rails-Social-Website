@@ -6,6 +6,8 @@ class TopicsController < ApplicationController
 		@topics = Topic.all
 		@new_topic = Topic.new
 		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+		@truncate = true
+		@pinterest = true
 	end
 
 	def create
@@ -23,6 +25,8 @@ class TopicsController < ApplicationController
 		@new_topic = Topic.new
 		@highlight_token = @topic.title
 		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+		@truncate = true
+		@pinterest = true
 	end
 
 	private

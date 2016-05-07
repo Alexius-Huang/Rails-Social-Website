@@ -2,14 +2,13 @@
 
 <div class="row">
 	<div class="col-md-offset-1 col-md-10">
-		<h3><%= icon "book" %> My Photos</h3>
+		<h3 class="inline-display"><%= icon "book" %> My Photos</h3>
+
+		<!-- Photo Functional Links -->
+		<%= render 'photo_albums/photo_function_links' %>
+		<br>
 	</div>
 </div>
-
-<hr class="col-md-offset-2 col-md-10">
-
-<!-- Photo Album Titles' Tags -->
-<%= render 'photo_albums/photo_album_tags_group' %>
 
 <hr class="col-md-offset-1 col-md-10">
 

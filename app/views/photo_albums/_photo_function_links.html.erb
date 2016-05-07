@@ -1,0 +1,21 @@
+<span class="tag-like tag-link tag-like-green pull-right <%= "highlight-green" if @photo_highlight_token == "All Photos" %>">
+	<%= link_to icon("eye-open") + " Browse All Photos", photo_albums_path %>
+</span>
+
+<% unless @photo_highlight_token == "All Photos" || @photo_highlight_token.nil? %>
+	<span class="tag-like tag-like-yellow tag-link hide-button-property pull-right">
+		<button type="button" data-toggle="modal" data-target="#new-photo-modal"> <%= icon "open-file" %> Upload New Photo </button>
+	</span>
+<% end %>
+
+<!-- New Photo Album Modal Link -->
+<span class="tag-like tag-like-yellow tag-link pull-right hide-button-property">
+	<button type="button" data-toggle="modal" data-target="#new-photo-album-modal"> <%= icon "plus" %>	Add New Photo Album</button>
+</span>
+
+<span class="tag-like tag-like-yellow tag-link pull-right">
+	<%= link_to icon("wrench") + " Setting", "#" %>
+</span>
+
+<!-- New Photo Album Modal -->
+<%= render 'photo_albums/new_photo_album_modal' %>

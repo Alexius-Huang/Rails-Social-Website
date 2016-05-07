@@ -1,0 +1,21 @@
+<div>
+
+	<div class="panel-heading"><h2><%= link_to article.title, topic_article_path(article.topic, article) %></h2></div>
+	<div class="panel-heading topic-tag-heading">
+			<%= link_to icon("tag") + " " + article.topic.title, topic_path(article.topic), :class => "topic-btn" %>
+	</div>
+
+	<% if @truncate %>
+		<div class="panel-body"><%= truncate(article.content, length: 500, omission: "...(continue)", escape: false) %></div>
+		<div class="row"></div>
+	<% else %>
+		<div class="panel-body"><%= article.content.html_safe %></div>
+	<% end %>
+
+	<div class="panel-body">
+		<%= link_to icon("remove") + "Remove", topic_article_path(article.topic, article), method: :delete, data: { confirm: "Are you sure to delete this article?" }, :class => "pull-right remove-btn" %>
+		<%= link_to icon("pencil") + " Edit", edit_topic_article_path(article.topic, article), :class => "pull-right edit-btn" %>
+		<%= link_to icon("eye-open") + " Read More", topic_article_path(article.topic, article), :class => "pull-right read-btn" %>
+	</div>
+
+</div>

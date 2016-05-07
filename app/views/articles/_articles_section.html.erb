@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-md-offset-1 col-md-10">
+		<div class="row">
+			<div class="col-md-3">
+				<h4><%= icon("list") %> Article Category</h4>
+				<%= render 'articles/article_list' %>
+			</div>
+			<div class="col-md-9">
+				<h4><%= icon "file" %> Browse All Articles</h4>
+				<% unless @articles.empty? %>
+					<%= render @articles %>
+				<% else %>
+					<div style="text-align: center;"><h4>Currently there are no articles : (</h4></div>
+				<% end %>
+				<div class="row"><hr class="col-md-12"></div>
+				<div style="text-align: center;"><%= will_paginate @articles %></div>
+			</div>
+		</div>
+		<hr class="col-md-12">
+	</div>
+</div>
