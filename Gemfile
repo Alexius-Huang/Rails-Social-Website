@@ -20,6 +20,8 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'devise'
+
 group :development, :test do
   gem 'byebug'
 	gem 'sqlite3'
