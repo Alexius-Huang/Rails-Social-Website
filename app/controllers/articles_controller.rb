@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+	before_action :authenticate_user!, except: [:show]
+	before_action :find_user
 	before_action :find_topic
 
 	def new
@@ -48,7 +50,11 @@ class ArticlesController < ApplicationController
 		params.require(:article).permit(:title, :content)
 	end
 
+	def find_user
+		@user = User.find(params[:user_id])
+	end
+
 	def find_topic
-		@topic = Topic.find(params[:topic_id])
+		@topic = @user.topics.find(params[:topic_id])
 	end
 end

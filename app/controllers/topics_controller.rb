@@ -1,28 +1,30 @@
 class TopicsController < ApplicationController
-	
+	before_action :authenticate_user!, except: [:index, :show]
+	before_action :find_user
+
 	def index
 		# Browse All the Articles
 		@highlight_token = "All Articles"
-		@topics = Topic.all
-		@new_topic = Topic.new
-		@articles = Article.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+		@topics = @user.topics.all
+		@new_topic = @user.topics.new
+		@articles = @user.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 		@truncate = true
 		@pinterest = true
 	end
 
 	def create
-		@topic = Topic.create(topic_params)
+		@topic = @user.topics.create(topic_params)
 
 		respond_to do |format|
-			format.html { redirect_to root_path }
+			format.html
 			format.js
 		end
 	end
 
 	def show
-		@topics = Topic.all
-		@topic = Topic.find(params[:id])
-		@new_topic = Topic.new
+		@topics = @user.topics.all
+		@topic = @user.topics.find(params[:id])
+		@new_topic = @user.topics.new
 		@highlight_token = @topic.title
 		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
 		@truncate = true
@@ -34,4 +36,9 @@ class TopicsController < ApplicationController
 	def topic_params
 		params.require(:topic).permit(:title)
 	end
+
+	def find_user
+		@user = User.find(params[:user_id])
+	end
+
 end
