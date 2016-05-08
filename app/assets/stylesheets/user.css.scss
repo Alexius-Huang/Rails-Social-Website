@@ -1,0 +1,30 @@
+$pure: rgb(255,255,255);
+$main-tint-1: rgb(48,114,165);
+$main-tint-2: rgb(71,130,175);
+$main-tint-3: rgb(94,145,185);
+$main-tint-4: rgb(117,161,195);
+$main-tint-5: rgb(140,177,205);
+$main-tint-6: rgb(163,192,215);
+$main-tint-7: rgb(186,208,225);
+$main-tint-8: rgb(209,223,235);
+
+body {
+	
+	/* Self Intro Collapse */
+	#user-self-intro {
+		#intro-panel {
+			background-color: #eeeeee;
+			font-size: 120%;
+			color: #555555;
+			padding: 20px 30px;
+			border-radius: 20px;
+			transition: background-color 0.5s, color 0.5s;
+		}
+
+		#intro-panel:hover {
+			background-color: $main-tint-7;
+			color: $pure;
+			transition: background-color 0.5s, color 0.5s;
+		}
+	}
+}
