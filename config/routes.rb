@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   mount Ckeditor::Engine => '/ckeditor'
   root 'home#welcome'
 

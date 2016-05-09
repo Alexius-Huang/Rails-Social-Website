@@ -18,4 +18,17 @@ class UsersController < ApplicationController
     @photo_sample = @photos.take(3)
   end
 
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      redirect_to root_path
+    end
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:name, :email, :motto, :self_intro, :avatar, :avatar_crop_x, :avatar_crop_y, :avatar_crop_w, :avatar_crop_h, :password, :password_confirmation, :current_password)
+  end
+  
 end

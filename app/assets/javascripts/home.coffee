@@ -7,4 +7,3 @@ $(document).on "page:change", ->
   $("#topic-list-ajax-link").click (event) ->
     event.preventDefault()
     $("#topics-ajax-section").slideToggle("slow")
-

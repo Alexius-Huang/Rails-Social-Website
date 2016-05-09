@@ -47,11 +47,15 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (8.2.5)
-    carrierwave (0.11.0)
+    carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    carrierwave-crop (0.1.2)
+      carrierwave (>= 0.8.0, < 0.11.0)
+      jquery-rails
+      rails (>= 3.2)
     ckeditor (4.1.6)
       cocaine
       orm_adapter (~> 0.5.0)
@@ -66,7 +70,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    concurrent-ruby (1.0.1)
+    concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     devise (4.1.0)
       bcrypt (~> 3.0)
@@ -98,7 +102,7 @@ GEM
     mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
-    multi_json (1.11.3)
+    multi_json (1.12.0)
     mysql2 (0.4.4)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -186,6 +190,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   carrierwave
+  carrierwave-crop
   ckeditor
   coffee-rails (~> 4.1.0)
   devise
