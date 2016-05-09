@@ -1,8 +1,27 @@
 <div class="collapse" id="user-skills">
 	<div class="row">
-		<div class="col-md-offset-1 col-md-10">
+		<div class="col-md-offset-1 col-md-10" id="skills-panel">
 			<h4><%= icon "tasks" %> My Skills</h4>
+			<% if @user.skills.any? %>
+				<% @user.skills.each do |skill| %>
+					<span class="tag-like">
+						<%= icon("tag") + " " + skill.title %>
+					</span>
+				<% end %>
+			<% else %>
+				<div style="text-align: center"><h5>Currently there are no information in it : (</h5></div>
+			<% end %>
+
+			<span id="append-skill"></span>
+	
+			<% if @user == current_user %>
+				<span class="tag-like tag-link hide-button-property">
+					<button type="button" data-toggle="modal" data-target="#new-user-skill-modal"><%= icon("plus") %> Add Skill</button>
+				</span>
+			<% end %>
 		</div>
 	</div>
-	<hr class="col-md-12">
 </div>
+
+<!-- New User Skill Modal -->
+<%= render 'users/new_user_skill_modal' %>

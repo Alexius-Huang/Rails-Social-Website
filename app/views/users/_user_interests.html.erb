@@ -1,8 +1,27 @@
 <div class="collapse" id="user-interests">
 	<div class="row">
-		<div class="col-md-offset-1 col-md-10">
+		<div class="col-md-offset-1 col-md-10" id="interests-panel">
 			<h4><%= icon "heart" %> My Interests</h4>
+			<% if @user.interests.any? %>
+				<% @user.interests.each do |interest| %>
+					<span class="tag-like">
+						<%= icon("tag") + " " + interest.title %>
+					</span>
+				<% end %>
+			<% else %>
+				<div style="text-align: center"><h5>Currently there are no information in it : (</h5></div>
+			<% end %>
+
+			<span id="append-interest"></span>
+	
+			<% if @user == current_user %>
+				<span class="tag-like tag-link hide-button-property">
+					<button type="button" data-toggle="modal" data-target="#new-user-interest-modal"><%= icon("plus") %> Add Interest</button>
+				</span>
+			<% end %>
 		</div>
 	</div>
-	<hr class="col-md-12">
 </div>
+
+<!-- New User Interest Modal -->
+<%= render 'users/new_user_interest_modal' %>

@@ -1,0 +1,26 @@
+<div class="modal fade" id="new-user-skill-modal" tabindex="-1" role="dialog" aria-labelledby="new-user-skill">
+  <div class="modal-dialog" role="document">
+  	<div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="new-user-skill-title">Add Skill</h4>
+      </div>
+      <div class="modal-body row">
+        <div class="col-md-offset-1 col-md-10">
+          <%= simple_form_for [@user, @user.skills.new], remote: true do |f| %>
+            <div class="form-group">
+              <%= f.input :title, input_html: { :class => "skill-form-control" } %>
+            </div>
+
+            <div class="form-action">
+              <%= f.submit "Submit" %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

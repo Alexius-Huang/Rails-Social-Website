@@ -8,23 +8,61 @@ $main-tint-6: rgb(163,192,215);
 $main-tint-7: rgb(186,208,225);
 $main-tint-8: rgb(209,223,235);
 
+@mixin panel-appearance {
+	background-color: #eeeeee;
+	color: #555555;
+	padding: 20px 30px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	transition: background-color 0.5s, color 0.5s;
+}
+
+@mixin panel-appearance-hover {
+	background-color: $main-tint-7;
+	color: $pure;
+	transition: background-color 0.5s, color 0.5s;
+}
+
 body {
 	
 	/* Self Intro Collapse */
 	#user-self-intro {
 		#intro-panel {
-			background-color: #eeeeee;
+			@include panel-appearance;
 			font-size: 120%;
-			color: #555555;
-			padding: 20px 30px;
-			border-radius: 20px;
-			transition: background-color 0.5s, color 0.5s;
 		}
 
 		#intro-panel:hover {
-			background-color: $main-tint-7;
-			color: $pure;
-			transition: background-color 0.5s, color 0.5s;
+			@include panel-appearance-hover;
+		}
+	}
+
+	#user-interests {
+		#interests-panel {
+			@include panel-appearance;
+			.tag-like:hover {
+				background-color: $main-tint-4;
+				transition: background-color 0.5s;
+			}
+		}
+
+		#interests-panel:hover {
+			@include panel-appearance-hover;
+		}
+	}
+
+	#user-skills {
+		#skills-panel {
+			@include panel-appearance;
+			.tag-like:hover {
+				background-color: $main-tint-4;
+				transition: background-color 0.5s;
+			}
+		}
+
+		#skills-panel:hover {
+			@include panel-appearance-hover;
 		}
 	}
 }
