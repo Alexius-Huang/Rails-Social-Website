@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :users do
 
+    resources :interests, only: [:create]
+    resources :skills,    only: [:create]
+
   	resources :topics do
     	resources :articles
   	end
