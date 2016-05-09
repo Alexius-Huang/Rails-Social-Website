@@ -1,12 +1,17 @@
-<div class="gap-small"></div>
+<div class="gap-large"></div>
 
-<p>User Avatar</p>
-<p>User Avatar</p>
-<p>User Avatar</p>
-<p>User Avatar</p>
-<p>User Avatar</p>
-<p>User Avatar</p>
-<p>User Avatar</p>
+<div class="row">
+	<div class="col-md-12" style="text-align: center;">
+		<% if @user.avatar.nil? %>
+			<%= image_tag "default_avatar.png", :class => "img-circle", :style => "max-width: 20%" %>
+		<% else %>
+			<%= image_tag @user.avatar.url(:thumb), :class => "img-circle", :style => "max-width: 20%; height: auto" %>
+		<% end %>
+
+		<div class="gap-small"></div>
+		<h4>Hello ! I'm <%= @user.name %> !</h4>
+	</div>
+</div>
 
 <hr class="col-md-offset-2 col-md-8">
 

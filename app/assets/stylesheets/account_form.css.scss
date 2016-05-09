@@ -56,5 +56,33 @@ body {
 			}
 		}
 
+		#cancel-account {
+			background-color: #eeeeee;
+			color: #555555;
+			padding: 20px 40px;
+			border-radius: 20px;
+			transition: background-color 0.5s, color 0.5s;
+
+			a {
+				text-decoration: none;
+				color: #888888;
+				float: right;
+				font-size: 120%;
+			}
+		}
+
+		#cancel-account:hover {
+			background-color: #ff9999;
+			color: $pure;
+			transition: background-color 0.5s, color 0.5s;
+
+			a {
+				color: #dddddd;
+			}
+
+			a:hover {
+				color: $pure;
+			}
+		}
 	}
 }
