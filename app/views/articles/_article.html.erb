@@ -6,7 +6,7 @@
 	</div>
 
 	<% if @truncate %>
-		<div class="panel-body"><%= truncate(article.content, length: 500, omission: "...(continue)", escape: false) %></div>
+		<div class="panel-body"><%= truncate(article.content, length: 350, omission: "...(continue)", escape: false) %></div>
 		<div class="row"></div>
 	<% else %>
 		<div class="panel-body"><%= article.content.html_safe %></div>

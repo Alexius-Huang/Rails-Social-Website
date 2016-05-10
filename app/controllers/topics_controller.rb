@@ -7,7 +7,7 @@ class TopicsController < ApplicationController
 		@highlight_token = "All Articles"
 		@topics = @user.topics.all
 		@new_topic = @user.topics.new
-		@articles = @user.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+		@articles = @user.articles.order("created_at DESC").paginate(page: params[:page], per_page: 3)
 		@truncate = true
 		@pinterest = true
 	end
@@ -26,7 +26,7 @@ class TopicsController < ApplicationController
 		@topic = @user.topics.find(params[:id])
 		@new_topic = @user.topics.new
 		@highlight_token = @topic.title
-		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 6)
+		@articles = @topic.articles.order("created_at DESC").paginate(page: params[:page], per_page: 3)
 		@truncate = true
 		@pinterest = true
 	end
