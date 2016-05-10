@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
+  before_action :find_user
   before_action :find_photo_album
 
   def create
@@ -33,13 +35,17 @@ class PhotosController < ApplicationController
   def destroy
     @photo = @photo_album.photos.find(params[:id])
     @photo.destroy
-    redirect_to photo_album_path(@photo_album)
+    redirect_to user_photo_album_path(@user ,@photo_album)
   end
 
   private
 
+  def find_user
+    @user = User.find(params[:user_id])
+  end
+
   def find_photo_album
-    @photo_album = PhotoAlbum.find(params[:photo_album_id])
+    @photo_album = @user.photo_albums.find(params[:photo_album_id])
   end
 
   def photo_params

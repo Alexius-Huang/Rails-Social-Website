@@ -1,5 +1,5 @@
 <span class="tag-like tag-link tag-like-green pull-right <%= "highlight-green" if @highlight_token == "All Articles" %>">
-	<%= link_to icon("eye-open") + " Browse All Articles", topics_path %>
+	<%= link_to icon("eye-open") + " Browse All Articles", user_topics_path(@user) %>
 </span>
 
 <span class="tag-like tag-like-yellow tag-link pull-right">
@@ -8,7 +8,7 @@
 
 <% unless @highlight_token.nil? || @highlight_token == "All Articles" %>
 	<span class="tag-like tag-like-yellow tag-link pull-right">
-		<%= link_to icon("plus") + " Compose New Article", new_topic_article_path(@topic) %>
+		<%= link_to icon("plus") + " Compose New Article", new_user_topic_article_path(@user, @topic) %>
 	</span>
 <% end %>
 

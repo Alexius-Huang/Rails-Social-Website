@@ -18,7 +18,10 @@ gem 'will_paginate'
 
 gem 'ckeditor'
 gem 'carrierwave'
+gem 'carrierwave-crop'
 gem 'mini_magick'
+
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'

@@ -1,0 +1,17 @@
+<div class="collapse" id="user-self-intro">
+	<div class="row">
+		<div class="col-md-offset-1 col-md-10" id="intro-panel">
+			<h4><%= icon "user" %> About Me</h4>
+			<% unless @user.self_intro.nil? %>
+				<%= @user.self_intro %>
+			<% else %>
+				Currently haven't introduced yet : (
+				<% if @user == current_user %>
+					<span class="tag-like tag-link pull-right" style="font-size: 80%">
+						<%= link_to icon("pencil") + " Go Edit!", edit_user_registration_path %>
+					</span>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 <div id="new-topic-ajax-section">
-	<%= simple_form_for @new_topic, remote: true do |f| %>
+	<%= simple_form_for [@user, @new_topic], remote: true do |f| %>
 		<div class="form-group">
 			<%= f.input :title, placeholder: "New Article Category's Title", input_html: { :class => "topic-form-control" } %>
 		</div>

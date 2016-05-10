@@ -7,10 +7,10 @@
 		<!-- Manipulation -->
 	<div class="col-md-6">
 		<span class="tag-like tag-like-red tag-link pull-right">
-			<%= link_to icon("remove") + " Delete", topic_article_path(@topic, @article), method: :delete, data: { confirm: "Are you sure to delete this article?" } %>
+			<%= link_to icon("remove") + " Delete", user_topic_article_path(@user, @topic, @article), method: :delete, data: { confirm: "Are you sure to delete this article?" } %>
 		</span>
 		<span class="tag-like tag-link tag-like-yellow pull-right">
-			<%= link_to icon("pencil") + " Edit", edit_topic_article_path(@topic, @article) %>
+			<%= link_to icon("pencil") + " Edit", user_edit_topic_article_path(@user, @topic, @article) %>
 		</span>
 		<span class="tag-like tag-link pull-right">
 			<%= link_to icon("chevron-left") + " Back", :back %>

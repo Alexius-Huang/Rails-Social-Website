@@ -5,7 +5,7 @@
 			<% @topics.each do |topic| %>
 				<div class="panel-body">
 					<p><%= icon("tag") + " " + topic.title %></p>
-					<%= link_to "Remove", topic_path(topic), method: :delete, :class => "pull-right remove-btn", :data => { confirm: "Are you sure? If you delete this article category, the articles in this category will be destoryed!" } %>
+					<%= link_to "Remove", user_topic_path(topic.user, topic), method: :delete, :class => "pull-right remove-btn", :data => { confirm: "Are you sure? If you delete this article category, the articles in this category will be destoryed!" } %>
 					<%= link_to "Edit", "#", :class => "pull-right edit-btn" %>
 				</div>
 			<% end %>

@@ -19,7 +19,7 @@
 				<!-- Photo List -->
 				<h4><%= icon "list" %> Photo List</h4>
 				<br>
-				<% unless @photos.empty? %>
+				<% unless @photo_albums.empty? %>
 					<%= render 'photos/photo_list' %>
 				<% end %>
 			</div>
@@ -33,7 +33,7 @@
 
 					<div class="row">
 						<div class="col-md-12" style="text-align: center;">
-							<span class="tag-like tag-like-green tag-link"><%= link_to icon("eye-open") + " Browse My Photos", photo_albums_path %></span> 
+							<span class="tag-like tag-like-green tag-link"><%= link_to icon("eye-open") + " Browse My Photos", user_photo_albums_path(@user) %></span> 
 						</div>
 					</div>
 				<% else %>

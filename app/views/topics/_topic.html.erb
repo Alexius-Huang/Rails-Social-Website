@@ -1,3 +1,3 @@
 	<span class="tag-like tag-link <%= "highlight" if @highlight_token == topic.title %>">
-		<%= link_to topic.title, topic_path(topic) %>
+		<%= link_to topic.title, user_topic_path(topic.user ,topic) %>
 	</span>

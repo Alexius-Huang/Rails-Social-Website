@@ -1,0 +1,32 @@
+<div class="gap-small"></div>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist" id="edit-registration-nav-tab">
+      <li role="presentation" class="active"><a href="#edit-account-tab" aria-controls="edit-account-tab" role="tab" data-toggle="tab"><%= icon "user" %> Edit Account</a></li>
+      <li role="presentation"><a href="#edit-articles-tab" aria-controls="edit-articles-tab" role="tab" data-toggle="tab"><%= icon "file" %> Edit Articles</a></li>
+      <li role="presentation"><a href="#edit-photos-tab" aria-controls="edit-photos-tab" role="tab" data-toggle="tab"><%= icon "picture" %> Edit Photos</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="gap-small"></div>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="edit-account-tab">
+        <%= render 'users/registrations/edit_account_tab' %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="edit-articles-tab">
+        <%= render 'users/registrations/edit_articles_tab' %>
+      </div>
+      <div role="tabpanel" class="tab-pane" id="edit-photos-tab">
+        <%= render 'users/registrations/edit_photos_tab' %>
+      </div>
+    </div>
+  </div>
+</div>
+
