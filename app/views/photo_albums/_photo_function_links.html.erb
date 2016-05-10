@@ -7,6 +7,10 @@
 		<span class="tag-like tag-like-yellow tag-link hide-button-property pull-right">
 			<button type="button" data-toggle="modal" data-target="#new-photo-modal"> <%= icon "open-file" %> Upload New Photo </button>
 		</span>
+
+		<!-- New Photo Modal -->
+		<%= render 'photos/new_photo_modal', photo_album: @photo_album, photo: @new_photo %>
+
 	<% end %>
 
 	<!-- New Photo Album Modal Link -->
@@ -17,7 +21,8 @@
 	<span class="tag-like tag-like-yellow tag-link pull-right">
 		<%= link_to icon("wrench") + " Setting", "#" %>
 	</span>
-<% end %>
 
-<!-- New Photo Album Modal -->
-<%= render 'photo_albums/new_photo_album_modal' %>
+	<!-- New Photo Album Modal -->
+	<%= render 'photo_albums/new_photo_album_modal' %>
+
+<% end %>
