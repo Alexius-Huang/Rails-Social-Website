@@ -3,11 +3,14 @@ class PhotosController < ApplicationController
   before_action :find_user
   before_action :find_photo_album
 
+  skip_before_filter :verify_authenticity_token, :only => [:create]
+
   def create
     @photo = @photo_album.photos.create(photo_params)
+    @photo.update(user_id: current_user.id)
 
     if @photo.save
-      redirect_to photo_album_path(@photo_album)
+      redirect_to user_photo_album_path(@user ,@photo_album)
     else
       render :new
     end
