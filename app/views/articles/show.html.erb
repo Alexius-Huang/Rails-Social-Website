@@ -1,4 +1,4 @@
-<div class="gap-small"></div>
+<div class="gap-small" id="top"></div>
 
 <div class="row">
 	<div class="col-md-offset-2 col-md-2">
@@ -10,7 +10,7 @@
 			<%= link_to icon("remove") + " Delete", user_topic_article_path(@user, @topic, @article), method: :delete, data: { confirm: "Are you sure to delete this article?" } %>
 		</span>
 		<span class="tag-like tag-link tag-like-yellow pull-right">
-			<%= link_to icon("pencil") + " Edit", user_edit_topic_article_path(@user, @topic, @article) %>
+			<%= link_to icon("pencil") + " Edit", edit_user_topic_article_path(@user, @topic, @article) %>
 		</span>
 		<span class="tag-like tag-link pull-right">
 			<%= link_to icon("chevron-left") + " Back", :back %>
@@ -46,5 +46,12 @@
 	</div>
 </div>
 
+<div class="row">
+	<div class="col-md-offset-2 col-md-8">
+		<span class="tag-like tag-link pull-right">
+			<a href="#top">Back to Top</a>
+		</span>
+	</div>
+</div>
 
 <div class="gap-large"></div>

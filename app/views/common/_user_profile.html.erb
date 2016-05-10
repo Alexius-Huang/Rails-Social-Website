@@ -1,4 +1,4 @@
-<div class="gap-large"></div>
+<div class="gap-large" id="top"></div>
 
 <div class="row">
 	<div class="col-md-12" style="text-align: center;">
@@ -35,6 +35,16 @@
 					<%= link_to icon("pencil") + " Edit Info", edit_user_registration_path %>
 				</span>
 			<% end %>
+
+			<br>
+
+			<span class="tag-like tag-link">
+				<a href="#user-article-bookmark"><%= icon "list" %> My Articles</a>
+			</span>
+
+			<span class="tag-like tag-link">
+				<a href="#user-photo-bookmark"><%= icon "picture" %> My Photos</a>
+			</span>
 		</div>
 	</div>
 </div>

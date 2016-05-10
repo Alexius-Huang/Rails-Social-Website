@@ -2,16 +2,24 @@
 	<%= link_to icon("eye-open") + " Browse All Articles", user_topics_path(@user) %>
 </span>
 
-<span class="tag-like tag-like-yellow tag-link pull-right">
-	<%= link_to icon("plus") + " Add New Article Category", "#", :id => "new-topic-ajax-link" %>
-</span>
+<% if @user == current_user %>
+	<% unless @highlight_token.nil? || @highlight_token == "All Articles" %>
+		<span class="tag-like tag-like-yellow tag-link pull-right">
+			<%= link_to icon("plus") + " Compose New Article", new_user_topic_article_path(@user, @topic) %>
+		</span>
+	<% end %>
+<% end %>
 
-<% unless @highlight_token.nil? || @highlight_token == "All Articles" %>
+<!-- New Article Topic Modal Link -->
+<% if @user == current_user %>
+	<span class="tag-like tag-like-yellow tag-link pull-right hide-button-property">
+		<button type="button" data-toggle="modal" data-target="#new-article-topic-modal"> <%= icon "list" %> New Article Category </button>
+	</span>
+
 	<span class="tag-like tag-like-yellow tag-link pull-right">
-		<%= link_to icon("plus") + " Compose New Article", new_user_topic_article_path(@user, @topic) %>
+		<%= link_to icon("wrench") + " Setting", edit_user_registration_path, :id => "topic-list-ajax-link" %>
 	</span>
 <% end %>
 
-<span class="tag-like tag-like-yellow tag-link pull-right">
-	<%= link_to icon("wrench") + " Setting", "#", :id => "topic-list-ajax-link" %>
-</span>
+<!-- New Article Topic Modal -->
+<%= render 'topics/new_article_topic_modal' %>

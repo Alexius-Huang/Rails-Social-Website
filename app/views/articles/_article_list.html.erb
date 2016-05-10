@@ -8,9 +8,13 @@
 		<!-- Collapsed Article List -->
 		<div id="article-list-<%= topic.id %>" class="collapse">
 			<ul class="side-nav">
-				<li><%= link_to icon("eye-open") + " Browse All", user_topic_path(topic.user, topic) %></li>
-				<% topic.articles.each do |article| %>
-					<li><%= link_to icon("file") + " " + article.title, user_topic_article_path(article.user, article.topic, article) %></li>
+				<li><%= link_to icon("eye-open") + " Browse All", user_topic_path(@user, topic) %></li>
+				<% unless topic.articles.empty? %>
+					<% topic.articles.each do |article| %>
+						<li><%= link_to icon("file") + " " + article.title, user_topic_article_path(topic.user, topic, article) %></li>
+					<% end %>
+				<% else %>
+					<li>No Articles Left : (</li>
 				<% end %>
 			</ul>
 		</div>
