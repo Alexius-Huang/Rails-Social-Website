@@ -8,11 +8,9 @@
 		<!-- Collapsed Photo List -->
 		<div id="photo-list-<%= album.id %>" class="collapse">
 			<ul class="side-nav">
+				<li><%= link_to icon("eye-open") + " Browse All", user_photo_album_path(@user, album) %></li>
 				<% if album.photos.empty? %>
 					<li style="text-align: center;">No Photos : (</li>
-					<% if @user == current_user %>
-						<li><%= link_to icon('upload') + " " + "Upload New Photo!", "#", data: { toggle: "modal", target: "#new-photo-modal-#{album.id}" } %></li>
-					<% end %>
 				<% else %>
 					<% album.photos.each do |photo| %>
 						<li><%= link_to icon("picture") + " " + photo.title, "#", data: { toggle: "modal", target: "#view-photo-modal-#{photo.id}" } %></li>
@@ -24,17 +22,10 @@
 	<div id="photo-album-append"></div>
 
 	<% if @user == current_user %>
-
-		<% @photo_albums.each do |album| %>
-			<!-- New Photo Modal (with id) -->
-		
-		<% end %>
-
 		<% @photos.each do |photo| %>
 			<!-- View Photo Modal -->
 			<%= render 'photos/view_photo_modal', photo: photo %>
 		<% end %>
-
 	<% end %>
 
 </div>

@@ -8,10 +8,8 @@
 			<%= link_to icon("plus") + " Compose New Article", new_user_topic_article_path(@user, @topic) %>
 		</span>
 	<% end %>
-<% end %>
 
-<!-- New Article Topic Modal Link -->
-<% if @user == current_user %>
+	<!-- New Article Topic Modal Link -->
 	<span class="tag-like tag-like-yellow tag-link pull-right hide-button-property">
 		<button type="button" data-toggle="modal" data-target="#new-article-topic-modal"> <%= icon "list" %> New Article Category </button>
 	</span>
