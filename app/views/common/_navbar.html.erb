@@ -2,7 +2,11 @@
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <%= link_to icon("star") + " Rails Blog", root_path , :class => "navbar-brand" %>
+      <% if @user.blog_title.nil? %>
+        <%= link_to icon("star") + " Rails Space", root_path , :class => "navbar-brand" %>
+      <% else %>
+        <%= link_to icon("star") + " " + @user.blog_title, root_path , :class => "navbar-brand" %>
+      <% end %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -10,8 +10,11 @@
 		<p><%= icon "time" %> Posted <%= time_ago_in_words(photo.created_at) %> ago </p>
 	</div>
 	<div class="panel-body panel-photo-operation">
-		<%= link_to icon("remove") + "Remove", user_photo_album_photo_path(photo.user, photo.photo_album, photo), method: :delete, data: { confirm: "Are you sure to delete this photo?" }, :class => "pull-right remove-btn" %>
-		<%= link_to icon("pencil") + " Edit", "#", :class => "pull-right edit-btn", :data => { toggle: "modal", target: "#edit-photo-modal-#{photo.id}" } %>
+		<% if @user == current_user %>
+			<%= link_to icon("remove") + "Remove", user_photo_album_photo_path(photo.user, photo.photo_album, photo), method: :delete, data: { confirm: "Are you sure to delete this photo?" }, :class => "pull-right remove-btn" %>
+			<%= link_to icon("pencil") + " Edit", "#", :class => "pull-right edit-btn", :data => { toggle: "modal", target: "#edit-photo-modal-#{photo.id}" } %>
+		<% end %>
+
 		<%= link_to icon("eye-open") + " View", "#", :class => "pull-right read-btn", :data => { toggle: "modal", target: "#view-photo-modal-#{photo.id}" } %>
 	</div>
 </div>

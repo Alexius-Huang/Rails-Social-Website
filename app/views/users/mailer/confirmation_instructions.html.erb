@@ -1,5 +1,37 @@
-<p>Welcome <%= @email %>!</p>
+<div id="email">
+	<p>Welcome <%= @user.name %> !</p>
 
-<p>You can confirm your account email through the link below:</p>
+	<p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+	<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
+
+<style>
+	@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500);
+
+	#email {
+		font-family: 'Ubuntu', sans-serif;	
+		background-color: rgb(117, 161, 195);
+		padding: 20px;
+		border-radius: 10px;
+	}	
+
+	#email p {
+		color: rgb(255,255,255);
+	}
+
+	#email p a {
+		padding: 10px;
+		border-radius: 20px;
+		background-color: rgb(117,161,195);
+		color: rgb(255,255,255);
+		text-decoration: none;
+		transition: color 0.5s, background-color 0.5s;
+	}
+
+	#email p a:hover {
+		transition: color 0.5s, background-color 0.5s;
+		color: rgb(117,161,195);
+		background-color: rgb(255,255,255);
+	}
+</style>

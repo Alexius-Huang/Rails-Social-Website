@@ -13,6 +13,7 @@
           <%= f.input :name, required: true, autofocus: true %>
           <%= f.input :email, required: true %>
           <%= f.input :motto, placeholder: "Your motto?", required: false %>
+          <%= f.input :blog_title, placeholder: "Blog Title" %>
           <%= f.input :avatar, as: :file %>
   
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>

@@ -13,8 +13,10 @@
 	<% end %>
 
 	<div class="panel-body">
-		<%= link_to icon("remove") + "Remove", user_topic_article_path(article.user, article.topic, article), method: :delete, data: { confirm: "Are you sure to delete this article?" }, :class => "pull-right remove-btn" %>
-		<%= link_to icon("pencil") + " Edit", edit_user_topic_article_path(article.user, article.topic, article), :class => "pull-right edit-btn" %>
+		<% if @user == current_user %>
+			<%= link_to icon("remove") + "Remove", user_topic_article_path(article.user, article.topic, article), method: :delete, data: { confirm: "Are you sure to delete this article?" }, :class => "pull-right remove-btn" %>
+			<%= link_to icon("pencil") + " Edit", edit_user_topic_article_path(article.user, article.topic, article), :class => "pull-right edit-btn" %>
+		<% end %>
 		<%= link_to icon("eye-open") + " Read More", user_topic_article_path(article.user, article.topic, article), :class => "pull-right read-btn" %>
 	</div>
 
