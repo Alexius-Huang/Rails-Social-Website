@@ -65,4 +65,62 @@ body {
 			@include panel-appearance-hover;
 		}
 	}
+
+	#user-edit-articles-panel, #user-edit-photos-panel {
+		
+		h4 {
+			background-color: #eeeeee;
+			padding: 10px;
+			border-radius: 20px;
+			transition: background-color 0.5s;
+
+			a {
+				color: #888888;
+				text-decoration: none;
+				transition: color 0.5s;
+			}
+		}
+
+		h4:hover {
+			background-color: $main-tint-4;
+			transition: background-color 0.5s;
+			a {
+				transition: color 0.5s;
+				color: $pure;
+			}
+		}
+
+		.panel {
+			background-color: #eeeeee;
+			color: #888888;
+			padding: 5px 10px;
+			margin-bottom: 3px;
+			border-radius: 20px;
+			transition: background-color 0.5s, color 0.5s;
+
+			a {
+				margin: 0px 5px;
+				text-decoration: none;
+				color: #999999;
+				transition: color 0.5s;
+			}
+
+		}
+
+		.panel:hover {
+			background-color: $main-tint-6;
+			color: $pure;
+			transition: background-color 0.5s, color 0.5s;
+		
+			a {
+				color: $main-tint-3;
+				transition: color 0.5s;
+			}
+
+			a:hover {
+				color: $pure;
+				transition: color 0.5s;
+			}
+		}
+	}
 }

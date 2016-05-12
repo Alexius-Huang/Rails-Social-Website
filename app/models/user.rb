@@ -9,13 +9,13 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   crop_uploaded :avatar
 
-  has_many :skills
-  has_many :interests
+  has_many :skills, dependent: :destroy
+  has_many :interests, dependent: :destroy
 
-  has_many :topics
+  has_many :topics, dependent: :destroy
   has_many :articles
   
-  has_many :photo_albums
+  has_many :photo_albums, dependent: :destroy
   has_many :photos
 
 end

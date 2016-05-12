@@ -31,6 +31,12 @@ class TopicsController < ApplicationController
 		@pinterest = true
 	end
 
+	def destroy
+		@topic = @user.topics.find(params[:id])
+		@topic.destroy
+		redirect_to :back, alert: "The Article Category Has Been Destroyed!"
+	end
+
 	private
 
 	def topic_params
