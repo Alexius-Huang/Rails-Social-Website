@@ -27,9 +27,15 @@
 			<span class="tag-like tag-link hide-button-property">
 				<button type="button" data-toggle="collapse" data-target="#user-skills"><%=  icon("tasks") + " My Skills" %></button>
 			</span>
+
+	<!-- 
+
 			<span class="tag-like tag-link hide-button-property">
 				<button type="button" data-toggle="collapse" data-target="#user-contact"><%=  icon("phone") + " Contact Me!" %></button>
 			</span>
+
+	 -->
+
 			<% if @user == current_user %>
 				<span class="tag-like tag-link">
 					<%= link_to icon("pencil") + " Edit Info", edit_user_registration_path %>

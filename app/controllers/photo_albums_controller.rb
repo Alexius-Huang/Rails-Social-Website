@@ -30,7 +30,7 @@ class PhotoAlbumsController < ApplicationController
   def destroy
     @photo_album = @user.photo_albums.find(params[:id])
     @photo_album.destroy
-    redirect_to user_photo_albums_path(@user)
+    redirect_to :back, alert: "The Photo Album has been Destroyed!"
   end
 
   private 
