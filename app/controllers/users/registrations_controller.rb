@@ -8,9 +8,12 @@ before_action :configure_account_update_params, only: [:update]
   # end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  
+    resource.skip_confirmation!
+    resource.save!
+  end
 
   # GET /resource/edit
   # def edit
@@ -80,4 +83,9 @@ before_action :configure_account_update_params, only: [:update]
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def send_on_create_confirmation_instructions
+  #  send_devise_notification(:confirmation_instructions)
+  #  DO NOTHING! REMEMBER TO CHECK THE SOURCE
+  end
 end
