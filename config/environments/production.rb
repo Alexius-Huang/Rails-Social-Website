@@ -87,4 +87,6 @@ Rails.application.configure do
   #   :domain  => 'yourdomain.com'
   #  }
 
+  config.secret_key_base = ENV["SECRET_KEY_BASE"] if Rails.env == 'production'
+
 end
