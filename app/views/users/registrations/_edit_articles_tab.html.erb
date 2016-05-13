@@ -14,44 +14,53 @@
 
       <div class="row">
         <div class="col-md-12">
-          <% @user.topics.each do |topic| %>
-            <span class="tag-like tag-link">
-              <%= topic.title %> <%= link_to icon("remove"), user_topic_path(@user, topic), :method => :delete, data: { confirm: "Are you sure?" } %>
-            </span>
+          <% if @user.topics.any? %>
+            <% @user.topics.each do |topic| %>
+              <span class="tag-like tag-link">
+                <%= topic.title %> <%= link_to icon("remove"), user_topic_path(@user, topic), :method => :delete, data: { confirm: "Are you sure?" } %>
+              </span>
+            <% end %>
+          <% else %>
+            <div style="text-align: center;">
+              <h5>Currently There are no Article Category : (</h5>
+            </div>
           <% end %>
         </div>
       </div>
         
       <hr class="col-md-12">
 
-      <div class="header">
-        <h3><%= icon "file" %> Articles</h3>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-12" id="user-edit-articles-panel">
-          <% @user.topics.each do |topic| %>
-            <h4>
-              <a role="button" data-toggle="collapse" href="#articles-collapse-topic-<%= topic.id %>" aria-expanded="false" aria-controls="articles-collapse-topic-<%= topic.id %>">
-                <%= icon("folder-open") + " " + topic.title %>
-              </a>
-            </h4>
-            
-            <div style="margin-bottom: 10px"></div>
-
-            <div class="collapse" id="articles-collapse-topic-<%= topic.id %>">
-              <% topic.articles.each do |article| %>
-                <div class="panel">
-                  <%= article.title %>
-                  <%= link_to icon("eye-open") + " View", user_topic_article_path(@user, topic, article), :class => "pull-right" %>
-                  <%= link_to icon("pencil") + " Edit", edit_user_topic_article_path(@user, topic, article), :class => "pull-right" %>
-                  <%= link_to icon("remove") + " Delete", user_topic_article_path(@user, topic, article), method: :delete, :data => { confirm: "Are you sure?" }, :class => "pull-right" %>
-                </div>
-              <% end %>
-            </div>
-          <% end %>
+      <% if @user.topics.any? %>
+        <div class="header">
+          <h3><%= icon "file" %> Articles</h3>
         </div>
-      </div>
+        
+        <div class="row">
+          <div class="col-md-12" id="user-edit-articles-panel">
+
+            <% @user.topics.each do |topic| %>
+              <h4>
+                <a role="button" data-toggle="collapse" href="#articles-collapse-topic-<%= topic.id %>" aria-expanded="false" aria-controls="articles-collapse-topic-<%= topic.id %>">
+                  <%= icon("folder-open") + " " + topic.title %>
+                </a>
+              </h4>
+              
+              <div style="margin-bottom: 10px"></div>
+
+              <div class="collapse" id="articles-collapse-topic-<%= topic.id %>">
+                <% topic.articles.each do |article| %>
+                  <div class="panel">
+                    <%= article.title %>
+                    <%= link_to icon("eye-open") + " View", user_topic_article_path(@user, topic, article), :class => "pull-right" %>
+                    <%= link_to icon("pencil") + " Edit", edit_user_topic_article_path(@user, topic, article), :class => "pull-right" %>
+                    <%= link_to icon("remove") + " Delete", user_topic_article_path(@user, topic, article), method: :delete, :data => { confirm: "Are you sure?" }, :class => "pull-right" %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
 
       <div class="gap-small"></div>
 
