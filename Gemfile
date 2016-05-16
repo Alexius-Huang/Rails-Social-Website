@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+#ruby '2.2.0'
 
 gem 'rails', '4.2.5'
 gem 'sass-rails', '~> 5.0'
@@ -21,7 +21,7 @@ gem 'carrierwave'
 gem 'carrierwave-crop'
 gem 'mini_magick'
 
-gem 'devise'
+gem 'devise', '3.5.3'
 
 group :development, :test do
   gem 'byebug'
@@ -34,7 +34,7 @@ group :development do
 end
 
 group :production do
-	# gem 'mysql2'
-	gem 'rails_12factor'
-	gem 'pg'
+	gem 'mysql2'
+	# gem 'rails_12factor'
+	# gem 'pg'
 end
